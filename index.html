@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="">
+  <meta name="keywords" content="Emotional talking head generation, expressive facial animation, emotional disentanglement">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DisenEMO</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script> -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">DisenEmo: Emotion Disentanglement for Audio-Driven 3D Talking Head Generation</h1>
+          <div class="column is-full_width">
+            <h2 class="title is-4">Anonymous submission</h2>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              Anonymous author<sup>1</sup>
+            </span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <!-- <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span> -->
+
+              <!-- <span class="link-block">
+                <a href="https://arxiv.org"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span> -->
+
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="#teaser"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (coming soon)</span>
+                  </a>
+              </span>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay loop controls playsinline height="100%">
+        <source src="./static/videos/main.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        <strong>DisenEMO</strong> can produce 3D talking heads with improved emotional expressiveness and realism.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Emotional 3D talking head generation synthesizes vivid facial expressions with precise lip synchronization for immersive interactions.
+            In this paper, we introduce <strong>DisenEMO</strong>, a novel framework designed to disentangle emotion and content from facial motions, 
+            thereby facilitating the synthesis of more realistic and expressive audio-driven facial animations.
+            To achieve precise emotional disentanglement, we incorporate an intensity perception constraint, 
+            which improves the accurate perception of categorized emotion and its intensities, leading to the generation of subtle emotional expressions.
+            To ensure the temporal consistency of facial expressions, we introduce facial dynamic modeling, 
+            which refines motion trajectories to better capture emotional nuances.
+            Finally, a motion decoder integrates emotional features with audio features extracted from driving speech, 
+            producing 3D talking heads with enhanced emotional expressiveness and realism.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+<!-- Method. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Method</h2>
+        
+
+        <!-- Architecture of DisenEMO -->
+        <h3 class="title is-4">Architecture of DisenEMO</h3>
+        <div class="content has-text-justified">
+          <p>
+            DisenEMO takes an audio sequence as content input and a facial motion sequence as emotional reference. 
+            Using facial motion as emotional source allows for accurate facial expression reconstruction.
+          </p>
+        </div>
+          <div class="content has-text-centered">
+            <img src="./static/images/main_final.png"
+                style="width: 55%"/>
+          </div>
+        <br/>
+        <!--/ Architecture of DisenEMO -->
+        
+
+        <!-- Cyclic cross-reconstruction disentanglement -->
+        <h3 class="title is-4">Cyclic cross-reconstruction disentanglement</h3>
+        <div class="content has-text-justified">
+          <p>
+            Emotion and content features are derived from facial motion inputs, switched and recombined to reconstruct corresponding outputs. 
+            This cyclic approach reduces the dependencies of specific paired training samples.
+          </p>
+        </div>
+          <div class="content has-text-centered">
+            <img src="./static/images/cycle_final.png"
+                style="width: 55%"/>
+          </div>
+        <br/>
+        <!--/ Cyclic cross-reconstruction disentanglement -->
+
+      </div>
+    </div>
+  </div>
+</section>  
+<!--/ Method. -->
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Comparison</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            Comparison of facial motion generated on 3D-HDTF (left, without emotion) and MEAD-3D (right, with various emotions). 
+            Our method produces expressive facial movements that match the emotions, achieving performance comparable to the ground truth with a noticeable range of motion.
+          </p>
+        </div>
+
+        <div class="content has-text-centered">
+          <img src="./static/images/visual_final.png"
+              style="width: 100%"/>
+        </div>
+
+        <div class="content has-text-justified">
+          <p>
+            T-SNE visualization of emotion feature on MEAD-3D. 
+            (a) with triplet constraint, 
+            (b) without triplet constraint. 
+            Features are clustered according to emotional categories. Darker colors indicate higher emotion intensity.
+          </p>
+        </div>
+
+        <div class="content has-text-centered">
+          <img src="./static/images/tsne_final.png"
+              style="width: 75%"/>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>  
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>
+      To be updated.
+    </code></pre>
+
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            Website source code based on the <a
+              href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> project page.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
